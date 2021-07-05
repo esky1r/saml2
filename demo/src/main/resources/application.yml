@@ -1,0 +1,12 @@
+spring:
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          samltest: # ここは任意の名前(RegistrationId)
+            identityprovider:
+              entity-id: urn:dev-auth0-idp.jp.auth0.com
+              verification.credentials:
+                - certificate-location: "classpath:certificate-auth0.pem"
+              singlesignon.url: https://dev-auth0-idp.jp.auth0.com/samlp/MHYURCQ9HMYAdIKmDg5174bo3CmCCddy
+              singlesignon.sign-request: false # SPはSAMLリクエストに署名をしない

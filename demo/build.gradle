@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+def springSecurityVersion = '5.4.0'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation "org.springframework.security:spring-security-core:$springSecurityVersion"
+    implementation "org.springframework.security:spring-security-web:$springSecurityVersion"
+    implementation "org.springframework.security:spring-security-config:$springSecurityVersion"
+    testImplementation "org.springframework.security:spring-security-test:$springSecurityVersion"
+
+    implementation "org.springframework.security:spring-security-saml2-service-provider:$springSecurityVersion"
+}
+
+test {
+	useJUnitPlatform()
+}
